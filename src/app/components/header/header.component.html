@@ -1,0 +1,52 @@
+<mat-toolbar class="max-w-7xl mx-auto border-x justify-between bg-amber-100">
+    <a routerLink="home" class="text-stone-600 font-bold font-sans text-xl">Banana Store</a>
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon [matBadge]="3" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+
+</mat-toolbar>
+
+
+
+<mat-menu #menu="matMenu">
+    <div class="p-3 divide-y divide-solid">
+
+        <!-- cart head with item count -->
+        <div class="pb-3 flex justify-between">
+            <span class="mr-16">3 Items</span>
+            <a routerLink="cart">View Cart</a>
+        </div>
+
+        <!-- cart items -->
+        <div class="py-3">
+            <div class="pb-3 flex justify-between font-light mp-2">
+                Banana x 1
+                <span class="font-bold">{{ '225' | currency}}</span>
+            </div>
+            <div class="pb-3 flex justify-between font-light mp-2">
+                Banana x 1
+                <span class="font-bold">{{ '225' | currency}}</span>
+            </div>
+        </div>
+
+        <!-- cart total -->
+        <div class="py-3 flex justify-between font-light">
+            Total:
+            <span class="font-bold">{{'450'|currency}}</span>
+        </div>
+
+        <!-- cart buttons -->
+        <div class="pt-3 flex justify-between">
+            <!-- the clear cart button -->
+            <button class="text-red-500 w-9 h-9">
+                <mat-icon>clear_all</mat-icon>
+            </button>
+
+            <!-- go to checkout button -->
+            <button class="text-green-800 w-9 h-9" routerLink="cart">
+                <mat-icon>shopping_cart_checkout</mat-icon>
+            </button>
+        </div>
+
+    </div>
+</mat-menu>
