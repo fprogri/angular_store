@@ -1,0 +1,15 @@
+<mat-card class="mb-4">
+    <div class="flex justify-between">
+        <div>
+            <button mat-button [mat-menu-trigger-for]="sortByMenu">
+                Sort by {{sort}}
+            </button>
+        </div>
+    </div>
+</mat-card>
+
+<mat-menu #sortByMenu>
+    <button (click)="onSortUpdated('Price: HIGH to low')" mat-menu-item>Price: HIGH to low</button>
+    <button (click)="onSortUpdated('Price: low to HIGH')" mat-menu-item>Price: low to HIGH</button>
+    <button (click)="onSortUpdated('Popular')" mat-menu-item>Popular</button>
+</mat-menu>
