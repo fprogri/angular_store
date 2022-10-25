@@ -3,13 +3,40 @@
         <div>
             <button mat-button [mat-menu-trigger-for]="sortByMenu">
                 Sort by {{sort}}
+                <mat-icon>expand_more</mat-icon>
+            </button>
+        </div>
+        <div class="flex items-center">
+            <div>
+                <button mat-button [mat-menu-trigger-for]="fry">
+                    Show {{itemsShowCount}}
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+            <button (click)="onColumnsUpdated(1)">
+                <mat-icon>view_list</mat-icon>
+            </button>
+            <button (click)="onColumnsUpdated(3)">
+                <mat-icon>view_module</mat-icon>
+            </button>
+            <button (click)=" onColumnsUpdated(4)">
+                <mat-icon>view_comfy</mat-icon>
             </button>
         </div>
     </div>
 </mat-card>
 
+
 <mat-menu #sortByMenu>
     <button (click)="onSortUpdated('Price: HIGH to low')" mat-menu-item>Price: HIGH to low</button>
     <button (click)="onSortUpdated('Price: low to HIGH')" mat-menu-item>Price: low to HIGH</button>
     <button (click)="onSortUpdated('Popular')" mat-menu-item>Popular</button>
+</mat-menu>
+
+
+<mat-menu #fry="matMenu">
+    <button (click)="onResultsUpdated('30')" mat-menu-item>30</button>
+    <button (click)="onResultsUpdated('90')" mat-menu-item>90</button>
+    <button (click)="onResultsUpdated('360')" mat-menu-item>360</button>
+    <button (click)="onResultsUpdated('1800')" mat-menu-item>1800</button>
 </mat-menu>
