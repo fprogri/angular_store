@@ -7,7 +7,7 @@ const ROWS_HEIGHT: { [id: number]: number } = { 1: 400, 3: 335, 4: 350 };
   templateUrl: "./home.component.html",
 })
 export class HomeComponent implements OnInit {
-  cols = 4;
+  cols = 1;
   rowHeight = ROWS_HEIGHT[this.cols];
   filter: string | undefined;
 
