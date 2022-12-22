@@ -1,3 +1,21 @@
-<mat-drawer-container [autosize]="true" class="min-h-full  max-w-7xl mx-auto border-x">
-    <h1 class="text-center items-center">Your cart will be here!</h1>
-</mat-drawer-container>
+<mat-card class="max-w-7xl mx-auto" *ngIf="cart.items.length">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-full">
+    <ng-container matColumnDef="product"></ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns">
+      a
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns">
+      a
+    </tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns">
+      a
+    </tr>
+  </table>
+</mat-card>
+
+<mat-card class="max-w-7xl mx-auto" *ngIf="!cart.items.length">
+  <p>
+    Your cart is empty.
+    <button mat-raised-button routerLink="/home">Start Shopping</button>
+  </p>
+</mat-card>
